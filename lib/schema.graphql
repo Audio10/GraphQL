@@ -1,0 +1,15 @@
+# Definicion de tipo personalizado
+
+type Course {
+    _id: ID
+    title: String
+    teacher: String
+    description: String
+    topic: String
+}
+
+# Definicion de Query
+type Query {
+    "Devuelve todos los Cursos"
+    getCourses: [Course]
+}

@@ -53,3 +53,31 @@ Para evitar el proceso de detener nuestro servidor cada que ejecutamos un nuevo 
 npm i nodemon -D
 ```
 
+
+
+# **Custom Types** 
+
+Para este proyecto vamos a seguir el estándar de estilos [*Standard*](https://standardjs.com/), para instalarlo corremos el siguiente comando:
+
+```
+npm i standard -D
+```
+
+GraphQL nos permite configurar nuestros propios tipos de datos, estos deben tener la siguientes sintaxis:
+
+```
+type <Nombre del tipo> {
+  propiedad: Tipo de dato
+}
+```
+
+Dentro de nuestros tipos de datos podemos configurar un campo de un tipo como obligatorio con el signo “!”, quedando por ejemplo:
+
+```
+type Course {
+  title: String!
+}
+```
+
+
+
