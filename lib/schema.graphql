@@ -1,10 +1,10 @@
 # Definicion de tipo personalizado
 
 type Course {
-    _id: ID
-    title: String
+    _id: ID!
+    title: String!
     teacher: String
-    description: String
+    description: String!
     topic: String
 }
 
@@ -12,4 +12,7 @@ type Course {
 type Query {
     "Devuelve todos los Cursos"
     getCourses: [Course]
+
+    "Devuelve solo el curso definido"
+    getCourse(id: ID!): Course
 }
