@@ -36,3 +36,20 @@ Dentro de GraphQL contamos con distintos tipos de datos escalares:
 Una query permite ejecutar una petición al API, dentro de una query debes indicar la consulta que quieres ejecutar y los campos que deseas obtener. GraphQL te va a devolver la información que solicitaste dentro del objeto `data`.
 
 El resultado de tu petición no se va a ejecutar de manera mágica, para ello debes definir el objeto `resolvers`, este objeto va a contener una propiedad del mismo nombre que la query que va a resolver o ejecutar. 
+
+
+
+#  **Sirviendo el API en la web** 
+
+Ya viste que nuestra API funciona a través de la línea de comandos, pero necesitamos que está funcione dentro de la web, para ello necesitas de las dependencias de **express** y un middleware de GraphQL, vamos a instalarlo con el siguiente comando:
+
+```
+npm i express express-graphql
+```
+
+Para evitar el proceso de detener nuestro servidor cada que ejecutamos un nuevo cambio vamos a utilizar la dependencia de desarrollo Nodemon:
+
+```
+npm i nodemon -D
+```
+
