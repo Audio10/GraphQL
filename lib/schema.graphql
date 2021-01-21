@@ -1,5 +1,6 @@
-# Definicion de tipo personalizado
+# Types definition.
 
+# When you use ! the field is required.
 type Course {
     _id: ID!
     title: String!
@@ -8,11 +9,11 @@ type Course {
     topic: String
 }
 
-# Definicion de Query
+# Query definition.
 type Query {
-    "Devuelve todos los Cursos"
+    "Returns all the courses."
     getCourses: [Course]
 
-    "Devuelve solo el curso definido"
+    "Returns only a specific id"
     getCourse(id: ID!): Course
 }

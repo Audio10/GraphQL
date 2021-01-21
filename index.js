@@ -2,7 +2,7 @@
 
 const { makeExecutableSchema } = require('graphql-tools')
 const express = require('express')
-const gqlMiddleware = require('express-graphql')
+const graphqlHTTP = require('express-graphql')
 
 const { readFileSync } = require('fs')
 const { join } = require('path')
@@ -11,16 +11,17 @@ const resolvers = require('./lib/resolvers')
 const app = express()
 const port = process.env.port || 300
 
-// definiendo el esquema
+// schema definition.
 const typeDefs = readFileSync(
   join(__dirname, "lib", "schema.graphql"),
   "utf-8"
 )
 
+// This needs the schema and the resolvers.
 const schema = makeExecutableSchema( { typeDefs, resolvers } )
 
-// Definir el midleware en un endpoint donde se define el schema y los resolvers ademas del entorno de GraphQL
-app.use('/api', gqlMiddleware({
+// To Use the middleware.
+app.use('/api', graphqlHTTP({
   schema: schema,
   rootValue: resolvers,
   graphiql: true
